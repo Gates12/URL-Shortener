@@ -1,0 +1,96 @@
+# URL Shortener - Documentation
+
+## Introduction
+This project is a **URL Shortener** that allows users to input a long URL and receive a shortened version. The shortened URL can later be used to redirect to the original long URL. The system also tracks how many times a shortened URL has been accessed.
+
+## Problem Breakdown
+1. **Users enter a long URL.**
+2. **The backend checks if the URL is valid.**
+3. **If valid, a unique short code is generated and stored.**
+4. **When someone visits the short URL, they are redirected to the original URL.**
+5. **The system tracks the number of times a short URL has been accessed.**
+
+## Project Structure
+```
+URL-SHORTENER/
+│── backend/
+│   │── __pycache__/       # Python compiled files
+│   │── __init__.py        # Package initialization
+│   │── app.py             # Main Flask app
+│   │── config.py          # Configuration file
+│   │── db.py              # Database connection (Redis)
+│── frontend/
+│   │── index.html         # Webpage UI
+│   │── script.js          # JavaScript for frontend logic
+│   │── style.css          # CSS for styling
+│── venv/                  # Virtual environment
+│── .gitignore             # Files to ignore in Git
+```
+
+---
+
+## Backend (Flask + Redis)
+### 1. **Setting Up the Flask App (app.py)**
+- **Flask** is used as the web framework.
+- **Redis** is used as the database to store mappings.
+- **CORS** is enabled to allow frontend requests.
+- **Functions**:
+  - `generate_short_url()`: Creates a random short URL.
+  - `shorten_url()`: API endpoint to shorten a URL.
+  - `redirect_to_long()`: Redirects short URL to the original long URL.
+  - `get_stats()`: Returns how many times a short URL was accessed.
+
+### 2. **Database Configuration (db.py & config.py)**
+- Redis is used to store:
+  - **Short URL -> Long URL** mapping.
+  - **Long URL -> Short URL** mapping (for quick lookups).
+  - **Access counts** for tracking visits.
+
+### 3. **Routes & Functionality**
+| Route | Method | Description |
+|---|---|---|
+| `/shorten` | POST | Accepts a long URL and returns a shortened version. |
+| `/<short_url>` | GET | Redirects to the original long URL. |
+| `/stats/<short_url>` | GET | Returns access count for the short URL. |
+
+---
+
+## Frontend (HTML, CSS, JavaScript)
+### **index.html**
+- Simple UI with:
+  - **Input field** for long URL.
+  - **Button** to shorten the URL.
+  - **Display section** to show the short URL.
+  - **Input field** for checking access count.
+  - **Button** to fetch access count.
+
+### **script.js**
+- **Functions:**
+  - `shortenUrl()`: Calls backend API to generate a short URL.
+  - `getAccessCount()`: Fetches the access count of a short URL.
+
+### **style.css**
+- Basic styling for UI elements.
+
+---
+
+## How to Run the Project
+1. **Backend Setup:**
+   - Install dependencies: `pip install flask redis flask-cors validators`
+   - Run the server: `python app.py`
+2. **Frontend Setup:**
+   - Open `index.html` in a browser.
+3. **Using the App:**
+   - Enter a long URL and click "Shorten URL".
+   - Copy and use the generated short URL.
+   - Enter the short code in "Get Access Count" to see usage stats.
+
+---
+
+## Conclusion
+This project efficiently shortens URLs using Flask and Redis, providing a simple and scalable solution. It ensures:
+✅ Unique short URLs
+✅ Instant redirects
+✅ Access tracking
+
+Enjoy using the URL Shortener! 🚀

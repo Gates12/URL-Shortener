@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+
+        <!-- Input for Long URL -->
+        <div>
+            <label for="longUrl">Enter Long URL:</label>
+            <input type="text" id="longUrl" placeholder="https://example.com">
+        </div>
+
+        <div>
+            <button onclick="shortenUrl()">Shorten URL</button>
+        </div>
+
+        <!-- Display the Shortened URL or Error -->
+        <div class="output" id="shortUrlRow" style="display: none;">
+            <p><strong>Short URL:</strong> <a id="generatedShortUrl" href=""></a></p>
+        </div>
+
+        <!-- Input for Short URL to get access count -->
+        <div>
+            <label for="shortUrl">Enter Shorten Code:</label>
+            <input type="text" id="shortUrl" placeholder="shortened code">
+            <button onclick="getAccessCount()">Get Access Count</button>
+        </div>
+
+        <!-- Display the Access Count -->
+        <div class="output" id="accessCountRow" style="display: none;">
+            <p><strong>Access Count:</strong> <span id="accessCountResult"></span></p>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

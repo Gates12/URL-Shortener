@@ -1,0 +1,108 @@
+    /* styles.css */
+
+    /* Global styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f1f5f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Main container */
+    .container {
+        width: 100%;
+        max-width: 600px;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Heading */
+    h1 {
+        font-size: 2.5em;
+        color: #1e40af;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    /* Label for inputs */
+    label {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        display: inline-block;
+        color: #555;
+    }
+
+    /* Inputs and buttons styling */
+    input, button {
+        width: 100%;
+        padding: 15px;
+        margin: 12px 0;
+        border-radius: 8px;
+        border: 2px solid #ddd;
+        box-sizing: border-box;
+        font-size: 1.1em;
+    }
+
+    /* Button styling */
+    button {
+        background-color: #1e40af;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #1d4ed8;
+    }
+
+    /* Output section styling */
+    .output {
+        background-color: #f8fafc;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #333;
+    }
+
+    /* Short URL and Access Count sections */
+    #short_url, #access_count {
+        word-wrap: break-word;
+        font-weight: normal;
+        color: #1e40af;
+    }
+
+    /* Footer section */
+    .footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #888;
+        font-size: 0.9em;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 600px) {
+        h1 {
+            font-size: 2em;
+        }
+
+        .container {
+            padding: 20px;
+            margin: 10px;
+        }
+
+        input, button {
+            font-size: 1em;
+        }
+    }
+
