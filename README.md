@@ -76,7 +76,7 @@ URL-SHORTENER/
 ## How to Run the Project
 ### **1. Backend Setup:**
 ```bash
-pip install flask redis flask-cors validators
+pip install -r requirements.txt
 python app.py
 ```
 
