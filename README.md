@@ -17,6 +17,11 @@ This is a **URL Shortener** project that converts long URLs into shorter, easy-t
 
 ---
 
+## Snippets
+![image](https://github.com/user-attachments/assets/277e5cae-bbd8-4691-9068-650355bc53a1)
+
+---
+
 ## Project Structure
 ```
 URL-SHORTENER/
